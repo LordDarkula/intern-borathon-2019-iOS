@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		13B3351522F0FAB800341D5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B3351422F0FAB800341D5C /* Assets.xcassets */; };
 		13B3351822F0FAB800341D5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B3351622F0FAB800341D5C /* LaunchScreen.storyboard */; };
 		13B3352022F0FB3100341D5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13B3351F22F0FB3100341D5C /* GoogleService-Info.plist */; };
+		FB5FB94DD4FF3F28A3BFFDC5 /* Pods_intern_borathon_2019.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848A7E654CB9A494B5E24822 /* Pods_intern_borathon_2019.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		13B3351722F0FAB800341D5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13B3351922F0FAB800341D5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13B3351F22F0FB3100341D5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6CB641FAD40704610CC9E1D3 /* Pods-intern-borathon-2019.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-intern-borathon-2019.debug.xcconfig"; path = "Target Support Files/Pods-intern-borathon-2019/Pods-intern-borathon-2019.debug.xcconfig"; sourceTree = "<group>"; };
+		74877C0C7D4E1134062439EC /* Pods-intern-borathon-2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-intern-borathon-2019.release.xcconfig"; path = "Target Support Files/Pods-intern-borathon-2019/Pods-intern-borathon-2019.release.xcconfig"; sourceTree = "<group>"; };
+		848A7E654CB9A494B5E24822 /* Pods_intern_borathon_2019.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_intern_borathon_2019.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB5FB94DD4FF3F28A3BFFDC5 /* Pods_intern_borathon_2019.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				13B3350C22F0FAB600341D5C /* intern-borathon-2019 */,
 				13B3350B22F0FAB600341D5C /* Products */,
+				6C02B2A55A10B6484FD4BAEA /* Pods */,
+				C365426B8DAD3FDFBF934945 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +90,23 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		6C02B2A55A10B6484FD4BAEA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6CB641FAD40704610CC9E1D3 /* Pods-intern-borathon-2019.debug.xcconfig */,
+				74877C0C7D4E1134062439EC /* Pods-intern-borathon-2019.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C365426B8DAD3FDFBF934945 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				848A7E654CB9A494B5E24822 /* Pods_intern_borathon_2019.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -90,9 +114,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B3351C22F0FAB800341D5C /* Build configuration list for PBXNativeTarget "intern-borathon-2019" */;
 			buildPhases = (
+				641F14E771EC3A7445E99B00 /* [CP] Check Pods Manifest.lock */,
 				13B3350622F0FAB600341D5C /* Sources */,
 				13B3350722F0FAB600341D5C /* Frameworks */,
 				13B3350822F0FAB600341D5C /* Resources */,
+				B1F64FD1369D9AB2F1304A60 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +175,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		641F14E771EC3A7445E99B00 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-intern-borathon-2019-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1F64FD1369D9AB2F1304A60 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-intern-borathon-2019/Pods-intern-borathon-2019-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-intern-borathon-2019/Pods-intern-borathon-2019-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-intern-borathon-2019/Pods-intern-borathon-2019-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		13B3350622F0FAB600341D5C /* Sources */ = {
@@ -300,10 +368,12 @@
 		};
 		13B3351D22F0FAB800341D5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CB641FAD40704610CC9E1D3 /* Pods-intern-borathon-2019.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "intern-borathon-2019/Info.plist";
+				DEVELOPMENT_TEAM = 99ZJBYWFM2;
+				INFOPLIST_FILE = "$(SRCROOT)/intern-borathon-2019/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,10 +387,12 @@
 		};
 		13B3351E22F0FAB800341D5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74877C0C7D4E1134062439EC /* Pods-intern-borathon-2019.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "intern-borathon-2019/Info.plist";
+				DEVELOPMENT_TEAM = 99ZJBYWFM2;
+				INFOPLIST_FILE = "$(SRCROOT)/intern-borathon-2019/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
