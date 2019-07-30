@@ -12,6 +12,7 @@
 		13B3351322F0FAB600341D5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B3351122F0FAB600341D5C /* Main.storyboard */; };
 		13B3351522F0FAB800341D5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B3351422F0FAB800341D5C /* Assets.xcassets */; };
 		13B3351822F0FAB800341D5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B3351622F0FAB800341D5C /* LaunchScreen.storyboard */; };
+		13B3352022F0FB3100341D5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13B3351F22F0FB3100341D5C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		13B3351422F0FAB800341D5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13B3351722F0FAB800341D5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13B3351922F0FAB800341D5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13B3351F22F0FB3100341D5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +58,29 @@
 			children = (
 				13B3350D22F0FAB600341D5C /* AppDelegate.swift */,
 				13B3350F22F0FAB600341D5C /* ViewController.swift */,
-				13B3351122F0FAB600341D5C /* Main.storyboard */,
+				13B3352122F0FDFB00341D5C /* Storyboards */,
 				13B3351422F0FAB800341D5C /* Assets.xcassets */,
-				13B3351622F0FAB800341D5C /* LaunchScreen.storyboard */,
-				13B3351922F0FAB800341D5C /* Info.plist */,
+				13B3352222F0FE3400341D5C /* Configuration */,
 			);
 			path = "intern-borathon-2019";
+			sourceTree = "<group>";
+		};
+		13B3352122F0FDFB00341D5C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				13B3351122F0FAB600341D5C /* Main.storyboard */,
+				13B3351622F0FAB800341D5C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		13B3352222F0FE3400341D5C /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				13B3351922F0FAB800341D5C /* Info.plist */,
+				13B3351F22F0FB3100341D5C /* GoogleService-Info.plist */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B3351822F0FAB800341D5C /* LaunchScreen.storyboard in Resources */,
+				13B3352022F0FB3100341D5C /* GoogleService-Info.plist in Resources */,
 				13B3351522F0FAB800341D5C /* Assets.xcassets in Resources */,
 				13B3351322F0FAB600341D5C /* Main.storyboard in Resources */,
 			);
