@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		13689AFB22F1410200A749B3 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13689AFA22F1410200A749B3 /* MainTableViewController.swift */; };
 		13689AFD22F1415800A749B3 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13689AFC22F1415800A749B3 /* MainTableViewCell.swift */; };
+		13689B0022F207ED00A749B3 /* Firestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13689AFF22F207ED00A749B3 /* Firestore.swift */; };
 		13B3350E22F0FAB600341D5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B3350D22F0FAB600341D5C /* AppDelegate.swift */; };
 		13B3351322F0FAB600341D5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B3351122F0FAB600341D5C /* Main.storyboard */; };
 		13B3351522F0FAB800341D5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B3351422F0FAB800341D5C /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		13689AFA22F1410200A749B3 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		13689AFC22F1415800A749B3 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		13689AFF22F207ED00A749B3 /* Firestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firestore.swift; sourceTree = "<group>"; };
 		13B3350A22F0FAB600341D5C /* intern-borathon-2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "intern-borathon-2019.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B3350D22F0FAB600341D5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13B3351222F0FAB600341D5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		13B3350122F0FAB600341D5C = {
 			isa = PBXGroup;
 			children = (
+				13689AFF22F207ED00A749B3 /* Firestore.swift */,
 				13B3350C22F0FAB600341D5C /* intern-borathon-2019 */,
 				13B3350B22F0FAB600341D5C /* Products */,
 				6C02B2A55A10B6484FD4BAEA /* Pods */,
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13689AFB22F1410200A749B3 /* MainTableViewController.swift in Sources */,
+				13689B0022F207ED00A749B3 /* Firestore.swift in Sources */,
 				13689AFD22F1415800A749B3 /* MainTableViewCell.swift in Sources */,
 				13B3350E22F0FAB600341D5C /* AppDelegate.swift in Sources */,
 			);

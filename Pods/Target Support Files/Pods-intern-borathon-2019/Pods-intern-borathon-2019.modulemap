@@ -1,0 +1,6 @@
+framework module Pods_intern_borathon_2019 {
+  umbrella header "Pods-intern-borathon-2019-umbrella.h"
+
+  export *
+  module * { export * }
+}
