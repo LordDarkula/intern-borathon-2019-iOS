@@ -9,7 +9,9 @@
 import UIKit
 
 class MainTableViewController: UITableViewController {
-
+    
+    var points: [DataPoint] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,22 @@ class MainTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        getCollection(atGarage: "prom", completion: self.refreshTable)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getCollection(atGarage: "prom", completion: self.refreshTable)
+        
+        let t = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: {(time) in
+            getCollection(atGarage: "prom", completion: self.refreshTable)
+            })
+        t.fire()
+    }
+    
+    func refreshTable(_ data: [DataPoint]) {
+        points = data
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -29,16 +47,28 @@ class MainTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //points = getCollection(atGarage: "prom")
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainTableViewCell", for: indexPath) as! MainTableViewCell
 
         // Configure the cell...
-        cell.locationLabel.text = "Kevin"
-        cell.capacityLabel.text = "69% Full"
-
+        cell.locationLabel.text = "Prom"
+        cell.timeSeriesChart.leftAxis.drawGridLinesEnabled = false
+        cell.timeSeriesChart.rightAxis.drawGridLinesEnabled = false
+        cell.timeSeriesChart.xAxis.drawGridLinesEnabled = false
+        cell.timeSeriesChart.data = constructChartData(withData: points, atGarage: "prom")
+        cell.timeSeriesChart.chartDescription?.text = ""
+        if points.count > 0 {
+            let mostRecent:  Int = points.max(by: {(dp1, dp2) -> Bool in
+                return dp1.index < dp2.index
+            })!.cars
+            cell.capacityLabel.text = "\(String(describing: mostRecent)) cars in lot"
+        }
+    
         return cell
     }
     

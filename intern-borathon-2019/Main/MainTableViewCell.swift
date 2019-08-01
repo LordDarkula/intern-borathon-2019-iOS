@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Charts
 
 class MainTableViewCell: UITableViewCell {
 
     @IBOutlet var locationLabel: UILabel!
+    @IBOutlet var timeSeriesChart: LineChartView!
     @IBOutlet var capacityLabel: UILabel!
     
     override func awakeFromNib() {

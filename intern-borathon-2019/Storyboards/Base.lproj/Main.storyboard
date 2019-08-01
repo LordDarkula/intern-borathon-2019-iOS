@@ -25,9 +25,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="321.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1wH-ts-rOD">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1wH-ts-rOD" customClass="LineChartView" customModule="Charts">
                                             <rect key="frame" x="30" y="68" width="354" height="200"/>
-                                            <color key="backgroundColor" red="0.0" green="1" blue="0.0096537812081503027" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="200" id="g2M-Jn-6CB"/>
                                             </constraints>
@@ -60,6 +60,7 @@
                                 <connections>
                                     <outlet property="capacityLabel" destination="dW4-vz-rSc" id="Yc7-Qw-Rxt"/>
                                     <outlet property="locationLabel" destination="Vgo-GT-Mg4" id="cYP-Hx-Yrm"/>
+                                    <outlet property="timeSeriesChart" destination="1wH-ts-rOD" id="xJq-fj-jIT"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
