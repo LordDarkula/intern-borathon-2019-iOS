@@ -20,11 +20,19 @@ func constructChartData(withData points: [DataPoint], atGarage garage: String) -
         lineChartEntry.append(value)
     }
     
+//    lineChartEntry.sort(by: ({(c1, c2) -> Bool in
+//            c1.x < c2.x
+//        }
+//    ))
+    
     let line = LineChartDataSet(entries: lineChartEntry, label: garage)
     line.colors = [NSUIColor.orange]
-    
+    line.drawCircleHoleEnabled = false
+    line.drawCirclesEnabled = false
+    line.drawValuesEnabled = false
     let data = LineChartData(dataSet: line)
     //data.addDataSet(line)
+    
     
     return data
 }

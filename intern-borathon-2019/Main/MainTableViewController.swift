@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 class MainTableViewController: UITableViewController {
     
@@ -60,13 +61,20 @@ class MainTableViewController: UITableViewController {
         cell.timeSeriesChart.leftAxis.drawGridLinesEnabled = false
         cell.timeSeriesChart.rightAxis.drawGridLinesEnabled = false
         cell.timeSeriesChart.xAxis.drawGridLinesEnabled = false
+        cell.timeSeriesChart.xAxis.labelPosition = XAxis.LabelPosition.bottom
+        cell.timeSeriesChart.legend.enabled = false
+        cell.timeSeriesChart.rightAxis.drawLabelsEnabled = false
         cell.timeSeriesChart.data = constructChartData(withData: points, atGarage: "prom")
         cell.timeSeriesChart.chartDescription?.text = ""
         if points.count > 0 {
             let mostRecent:  Int = points.max(by: {(dp1, dp2) -> Bool in
                 return dp1.index < dp2.index
             })!.cars
-            cell.capacityLabel.text = "\(String(describing: mostRecent)) cars in lot"
+            if mostRecent == 1 {
+                cell.capacityLabel.text = "1 car in lot"
+            } else {
+                cell.capacityLabel.text = "\(String(describing: mostRecent)) cars in lot"
+            }
         }
     
         return cell

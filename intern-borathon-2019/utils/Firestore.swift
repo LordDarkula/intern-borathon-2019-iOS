@@ -12,7 +12,7 @@ import FirebaseFirestore
 let db = Firestore.firestore()
 
 func getCollection(atGarage garage: String, completion: @escaping ([DataPoint]) -> Void) {
-    db.collection(garage).getDocuments() { (querySnapshot, err) in
+    db.collection(garage).order(by: "index").getDocuments() { (querySnapshot, err) in
         if let err = err {
             print("Error getting documents: \(err)")
             completion([DataPoint]())
