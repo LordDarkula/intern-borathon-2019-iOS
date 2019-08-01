@@ -12,6 +12,13 @@ import Charts
 class MainTableViewController: UITableViewController {
     
     var points: [DataPoint] = []
+    var promPoints: [DataPoint] = []
+    var hilltopPoints: [DataPoint] = []
+    var creeksidePoints: [DataPoint] = []
+    
+    var prevProm = 0
+    var prevHilltop = 0
+    var prevCreekside = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,22 +28,51 @@ class MainTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        getCollection(atGarage: "prom", completion: self.refreshTable)
+        getCollection(atGarage: "prom", completion: self.refreshPromTable)
+        getCollection(atGarage: "hilltop", completion: self.refreshHilltopTable)
+        getCollection(atGarage: "creekside", completion: self.refreshCreeksideTable)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        getCollection(atGarage: "prom", completion: self.refreshTable)
+        self.tableView.allowsSelection = false
+        getCollection(atGarage: "prom", completion: self.refreshPromTable)
+        getCollection(atGarage: "hilltop", completion: self.refreshHilltopTable)
+        getCollection(atGarage: "creekside", completion: self.refreshCreeksideTable)
         
         let t = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: {(time) in
-            getCollection(atGarage: "prom", completion: self.refreshTable)
+            getCollection(atGarage: "prom", completion: self.refreshPromTable)
+            getCollection(atGarage: "hilltop", completion: self.refreshHilltopTable)
+            getCollection(atGarage: "creekside", completion: self.refreshCreeksideTable)
             })
         t.fire()
     }
     
-    func refreshTable(_ data: [DataPoint]) {
-        points = data
+    func refreshPromTable(_ data: [DataPoint]) {
+        promPoints = data
+        let contentOffset = tableView.contentOffset
         self.tableView.reloadData()
+        self.tableView.layoutIfNeeded()
+        self.tableView.setContentOffset(contentOffset, animated: false)
+
+    }
+    
+    func refreshHilltopTable(_ data: [DataPoint]) {
+        hilltopPoints = data
+        let contentOffset = tableView.contentOffset
+        self.tableView.reloadData()
+        self.tableView.layoutIfNeeded()
+        self.tableView.setContentOffset(contentOffset, animated: false)
+
+    }
+    
+    func refreshCreeksideTable(_ data: [DataPoint]) {
+        creeksidePoints = data
+        let contentOffset = tableView.contentOffset
+        self.tableView.reloadData()
+        self.tableView.layoutIfNeeded()
+        self.tableView.setContentOffset(contentOffset, animated: false)
+
     }
 
     // MARK: - Table view data source
@@ -48,7 +84,7 @@ class MainTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return garages.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,24 +93,56 @@ class MainTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainTableViewCell", for: indexPath) as! MainTableViewCell
 
         // Configure the cell...
-        cell.locationLabel.text = "Prom"
+        cell.locationLabel.text = garages[indexPath.row]
         cell.timeSeriesChart.leftAxis.drawGridLinesEnabled = false
         cell.timeSeriesChart.rightAxis.drawGridLinesEnabled = false
         cell.timeSeriesChart.xAxis.drawGridLinesEnabled = false
         cell.timeSeriesChart.xAxis.labelPosition = XAxis.LabelPosition.bottom
         cell.timeSeriesChart.legend.enabled = false
         cell.timeSeriesChart.rightAxis.drawLabelsEnabled = false
-        cell.timeSeriesChart.data = constructChartData(withData: points, atGarage: "prom")
+        cell.timeSeriesChart.isUserInteractionEnabled = false
+        var labelPoints: [DataPoint]
+        var totalCapacity: Int
+        switch indexPath.row {
+        case 0:
+            cell.timeSeriesChart.data = constructChartData(withData: promPoints, atGarage: garages[indexPath.row])
+            labelPoints = promPoints
+            totalCapacity = 7
+            break
+        case 1:
+            cell.timeSeriesChart.data = constructChartData(withData: hilltopPoints, atGarage: garages[indexPath.row])
+            labelPoints = hilltopPoints
+            totalCapacity = 40
+            break
+        case 2:
+            cell.timeSeriesChart.data = constructChartData(withData: creeksidePoints, atGarage: garages[indexPath.row])
+            labelPoints = creeksidePoints
+            totalCapacity = 30
+        default:
+            cell.timeSeriesChart.data = constructChartData(withData: points, atGarage: garages[indexPath.row])
+            labelPoints = []
+            totalCapacity = 0
+        }
+        
         cell.timeSeriesChart.chartDescription?.text = ""
-        if points.count > 0 {
-            let mostRecent:  Int = points.max(by: {(dp1, dp2) -> Bool in
+        if labelPoints.count > 0 {
+            let mostRecent:  Int = labelPoints.max(by: {(dp1, dp2) -> Bool in
                 return dp1.index < dp2.index
             })!.cars
-            if mostRecent == 1 {
-                cell.capacityLabel.text = "1 car in lot"
+            
+            let spotsFree = totalCapacity - mostRecent
+            
+            cell.capacityLabel.text = "\(mostRecent)/\(totalCapacity)"
+            
+            if spotsFree > 5 {
+                cell.capacityLabel.textColor = UIColor.green
+            } else if spotsFree > 3 {
+                cell.capacityLabel.textColor = UIColor.yellow
             } else {
-                cell.capacityLabel.text = "\(String(describing: mostRecent)) cars in lot"
+                cell.capacityLabel.textColor = UIColor.red
             }
+        } else {
+            cell.capacityLabel.text = "0/\(totalCapacity)"
         }
     
         return cell

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1363D6E122F228F90082B602 /* Charts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363D6E022F228F90082B602 /* Charts.swift */; };
+		1363D6E322F276D40082B602 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363D6E222F276D40082B602 /* Constants.swift */; };
 		13689AFB22F1410200A749B3 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13689AFA22F1410200A749B3 /* MainTableViewController.swift */; };
 		13689AFD22F1415800A749B3 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13689AFC22F1415800A749B3 /* MainTableViewCell.swift */; };
 		13689B0022F207ED00A749B3 /* Firestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13689AFF22F207ED00A749B3 /* Firestore.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		1363D6E022F228F90082B602 /* Charts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
+		1363D6E222F276D40082B602 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		13689AFA22F1410200A749B3 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		13689AFC22F1415800A749B3 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		13689AFF22F207ED00A749B3 /* Firestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firestore.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		13B3350C22F0FAB600341D5C /* intern-borathon-2019 */ = {
 			isa = PBXGroup;
 			children = (
+				1363D6E222F276D40082B602 /* Constants.swift */,
 				13689B0422F214E200A749B3 /*  models */,
 				13689B0122F212B100A749B3 /* utils */,
 				13689AFE22F2072D00A749B3 /* Main */,
@@ -263,6 +266,7 @@
 				13689B0322F214D900A749B3 /* point.swift in Sources */,
 				13689AFB22F1410200A749B3 /* MainTableViewController.swift in Sources */,
 				13689B0022F207ED00A749B3 /* Firestore.swift in Sources */,
+				1363D6E322F276D40082B602 /* Constants.swift in Sources */,
 				13689AFD22F1415800A749B3 /* MainTableViewCell.swift in Sources */,
 				13B3350E22F0FAB600341D5C /* AppDelegate.swift in Sources */,
 			);

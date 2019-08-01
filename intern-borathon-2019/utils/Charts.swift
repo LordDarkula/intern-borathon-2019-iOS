@@ -12,7 +12,6 @@ import Charts
 let calendar = Calendar.current
 
 func constructChartData(withData points: [DataPoint], atGarage garage: String) -> ChartData {
-    print("Constructing chart Data . . .")
     var lineChartEntry = [ChartDataEntry]()
     
     for point in points {
